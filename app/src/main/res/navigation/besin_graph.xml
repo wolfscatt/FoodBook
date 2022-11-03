@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/besin_graph"
+    app:startDestination="@id/besinlerListesiFragment">
+
+    <fragment
+        android:id="@+id/besinlerListesiFragment"
+        android:name="com.tufar.besinlerkitabi.view.BesinlerListesiFragment"
+        android:label="BesinlerListesiFragment" >
+        <action
+            android:id="@+id/action_besinlerListesiFragment_to_besinDetayiFragment"
+            app:destination="@id/besinDetayiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/besinDetayiFragment"
+        android:name="com.tufar.besinlerkitabi.view.BesinDetayiFragment"
+        android:label="BesinDetayiFragment" >
+        <action
+            android:id="@+id/action_besinDetayiFragment_to_besinlerListesiFragment"
+            app:destination="@id/besinlerListesiFragment" />
+        <argument
+            android:name="besinId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
